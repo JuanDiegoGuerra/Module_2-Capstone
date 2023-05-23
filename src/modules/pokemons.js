@@ -4,7 +4,7 @@ let numberOfItems = 0;
 const cards = document.body.querySelector('.cards');
 cards.addEventListener('click', (e) => {
   if (e.target && e.target.className === 'comment') {
-    const url = `https://pokeapi.co/api/v2/pokemon/${e.target.id}`;
+    // const url = `https://pokeapi.co/api/v2/pokemon/${e.target.id}`;
   }
 });
 
