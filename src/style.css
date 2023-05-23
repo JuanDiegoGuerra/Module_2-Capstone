@@ -95,6 +95,7 @@
 .card .card-title img {
   margin-left: auto;
   gap: 1rem;
+  cursor: pointer;
 }
 
 .card .like-count {
