@@ -7,4 +7,10 @@ export default class API {
         newComment: '',
       };
     }
+  
+    async get(url) {
+      this.url = url;
+      const response = await fetch(url);
+      return response.json();
+    }
   }
