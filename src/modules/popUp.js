@@ -6,19 +6,24 @@ const removePopup = () => {
   document.body.removeChild(popupContainer);
 };
 
-const displayPopup = () => {
-  popupContainer.innerHTML = `
+const displayPopup = (url, id) => {
+  fetch(url).then((response) => response.json())
+    .then((data) => {
+      const {
+        name, weight, height, sprites,
+      } = data;
+      const { front_default: frontDefault } = sprites.other['official-artwork'];
+      popupContainer.innerHTML = `
   <div class="popup">
     <button id="close-btn" class="close-btn" type="button">X</button>
     <div class="image-container">
-    <img src="https://picsum.photos/id/1/500/300" alt="dummy">
+    
+    <img src="${frontDefault}" id="${id}"alt="${name}">
     </div>
-    <h2 class="item-header">Space 3</h2>
+    <h2 class="item-header">${name}</h2>
     <div class="details">
-      <div class="item-detail__list">fuel: natural gas</div>
-      <div class="item-detail__list">weight: 40lbs</div>
-      <div class="item-detail__list">length: 20km</div>
-      <div class="item-detail__list">power: 100mph</div>
+      <div class="item-detail__list">Weight: ${weight}</div>
+      <div class="item-detail__list">Height: ${height}</div>
     </div>
     <h3>Comments(2)</h3>
     <div class="comments-container">
@@ -38,23 +43,26 @@ const displayPopup = () => {
     </form>
   </div>`;
 
-  const commentForm = popupContainer.querySelector('#comment-form');
+      const commentForm = popupContainer.querySelector('#comment-form');
 
-  commentForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const nameInput = commentForm.querySelector('input[name="name"]');
-    const commentsInput = commentForm.querySelector('textarea[name="comments"]');
-    // const name = nameInput.value;
-    // const comment = commentsInput.value;
-    // Here, you can make a request to your Involvement API to record the comment
-    nameInput.value = '';
-    commentsInput.value = '';
-  });
+      commentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nameInput = commentForm.querySelector('input[name="name"]');
+        const commentsInput = commentForm.querySelector('textarea[name="comments"]');
+        // const name = nameInput.value;
+        // const comment = commentsInput.value;
+        // Here, you can make a request to your Involvement API to record the comment
+        nameInput.value = '';
+        commentsInput.value = '';
+      });
 
-  document.body.appendChild(popupContainer);
+      document.body.appendChild(popupContainer);
 
-  const closeButton = document.getElementById('close-btn');
-  closeButton.addEventListener('click', removePopup);
+      const closeButton = document.getElementById('close-btn');
+      closeButton.addEventListener('click', removePopup);
+    }).catch((err) => {
+      throw ("Couldn't fetch pokemon", err)();
+    });
 };
 
 export { displayPopup, removePopup };
