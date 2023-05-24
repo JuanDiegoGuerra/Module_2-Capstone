@@ -1,4 +1,5 @@
 import pokemonLogo from '../images/pokemon-logo.jpeg';
+import pokemons from './pokemons.js';
 
 const headingLogo = document.querySelector('.heading__logo');
 const logo = document.createElement('img');
@@ -8,11 +9,9 @@ headingLogo.appendChild(logo);
 
 const navList = document.querySelector('.nav__list');
 
-const listItems = ['Pokemon', 'Planet', 'Race'];
-
 const createHeader = () => {
   const header = document.querySelector('.heading');
-  const count = 0;
+  const listItems = ['Pokemon', 'Planet', 'Race'];
 
   for (let i = 0; i < listItems.length; i += 1) {
     const navItems = document.createElement('li');
@@ -21,8 +20,13 @@ const createHeader = () => {
     navItems.innerText = `${listItems[i]}`;
 
     if (listItems[i] === 'Pokemon') {
-      navItems.classList.add('active');
-      navItems.innerText = `${listItems[i]} (${count})`;
+      pokemons('https://pokeapi.co/api/v2/pokemon?limit=8&offset=12')
+        .then((response) => {
+          navItems.classList.add('active');
+          navItems.innerText = `${listItems[i]}(${response})`;
+        });
+    } else {
+      navItems.classList.remove('active');
     }
 
     navList.appendChild(navItems);
