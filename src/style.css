@@ -6,15 +6,15 @@
 
 body {
   content: '';
-    background: radial-gradient(#299b1c 35%, transparent 70%);
-    background-size: 2.5px 2.5px;
-    border-radius: 4px;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    z-index: -1;
+  background: radial-gradient(#299b1c 35%, transparent 70%);
+  background-size: 2.5px 2.5px;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: -1;
 }
 
 .heading {
@@ -109,11 +109,11 @@ body {
   background-size: 10px 10px;
 }
 
-.likeBtn{
+.likeBtn {
   transition: transform 0.5s;
 }
 
-.likeBtn:hover{
+.likeBtn:hover {
   transform: scale(1.25);
 }
 
@@ -132,7 +132,7 @@ body {
   align-self: flex-end;
   margin-bottom: 0.7rem;
   margin-right: 0.5vw;
-  font-weight: bold;  
+  font-weight: bold;
 }
 
 .card .buttons button {
