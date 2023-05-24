@@ -7,7 +7,7 @@ import likesPost, { likeGet } from './modules/likes.js';
 createHeader();
 
 const itemNumbers = document.getElementById('PokeNumber');
-likeGet('L3cd5MnXmz3nt1juQH1n')
+likeGet()
   .then((data) => {
     data.forEach((element) => {
       const targetItem = element[1].item_id.split('likeId').slice(1);
@@ -17,8 +17,8 @@ likeGet('L3cd5MnXmz3nt1juQH1n')
 
 document.body.addEventListener('click', (e) => {
   if (e.target && e.target.className === 'likeBtn') {
-    likesPost('L3cd5MnXmz3nt1juQH1n', e.target);
-    likeGet('L3cd5MnXmz3nt1juQH1n');
+    likesPost(e.target);
+    likeGet();
     const targetId = (e.target.id).split('likeId').slice(1);
     const targetHeart = document.querySelector(`#like-count${targetId}`).innerHTML.split(' ');
     document.querySelector(`#like-count${targetId}`).innerHTML = `${(Number(targetHeart[0])) + 1} Likes`;

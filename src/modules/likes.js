@@ -1,7 +1,10 @@
 import likeImage from '../images/like.png';
+import API from '../modules/api_data.js';
+const api = new API();
+const likeURL = api.urls.likes;
 
-export const likeGet = async (id) => {
-  const data = fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${id}/likes`)
+export const likeGet = async () => {
+  const data = fetch(likeURL)
     .then((response) => response.json())
     .then((obj) => Object.entries(obj))
     .catch((err) => {
@@ -10,8 +13,8 @@ export const likeGet = async (id) => {
   return data;
 };
 
-const likesPost = async (id, target) => {
-  fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${id}/likes`, {
+const likesPost = async (target) => {
+  fetch(likeURL, {
 
     method: 'POST',
     body: JSON.stringify({
