@@ -4,6 +4,19 @@
   padding: 0;
 }
 
+body {
+  content: '';
+    background: radial-gradient(#299b1c 35%, transparent 70%);
+    background-size: 2.5px 2.5px;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: -1;
+}
+
 .heading {
   display: flex;
   justify-content: space-around;
@@ -13,14 +26,13 @@
   font-size: 25px;
   margin: 0;
   padding: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: lightblue;
   border-radius: 10px;
   box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
 .heading__logo img {
   width: 150px;
-  box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
 .heading__logo img:hover {
@@ -80,11 +92,29 @@
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
+  background-color: azure;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.5s;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card .pokemon-img {
   border: 1px solid black;
-  border-radius: 2px;
+  border-radius: 20px;
+  background: radial-gradient(#115609 33%, #8d3394 33%);
+  background-size: 10px 10px;
+}
+
+.likeBtn{
+  transition: transform 0.5s;
+}
+
+.likeBtn:hover{
+  transform: scale(1.25);
 }
 
 .card .card-title {
@@ -101,6 +131,8 @@
 .card .like-count {
   align-self: flex-end;
   margin-bottom: 0.7rem;
+  margin-right: 0.5vw;
+  font-weight: bold;  
 }
 
 .card .buttons button {
@@ -110,11 +142,14 @@
   box-shadow: 5px 5px 2px -1px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 5px 5px 2px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 5px 5px 2px -1px rgba(0, 0, 0, 0.75);
+  margin-bottom: 2vh;
+  background-color: silver;
+  cursor: pointer;
 }
 
 .card .buttons button:hover {
   color: #fff;
-  background-color: #000;
+  background-color: #0c4be1;
 }
 
 .card .buttons button:active {
