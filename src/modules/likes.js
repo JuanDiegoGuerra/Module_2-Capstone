@@ -1,5 +1,6 @@
 import likeImage from '../images/like.png';
-import API from '../modules/api_data.js';
+import API from './api_data.js';
+
 const api = new API();
 const likeURL = api.urls.likes;
 

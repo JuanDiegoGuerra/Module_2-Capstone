@@ -1,13 +1,14 @@
 import unlike from '../images/unlike.png';
-import API from '../modules/api_data.js';
-const api = new API();
-const pokemonURL = api.urls.pokemons;
+// import API from './api_data.js';
+
+// const api = new API();
+// const pokemonURL = api.urls.pokemons;
 
 let numberOfItems = 0;
 const cards = document.body.querySelector('.cards');
 cards.addEventListener('click', (e) => {
   if (e.target && e.target.className === 'comment') {
-    const url = pokemonURL`${e.target.id}`;
+    // const url = pokemonURL`${e.target.id}`;
   }
 });
 
