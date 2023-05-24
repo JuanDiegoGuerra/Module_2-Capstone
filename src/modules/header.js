@@ -1,4 +1,4 @@
-import pokemonLogo from '../images/pokemon-logo.jpeg';
+import pokemonLogo from '../images/International_Pokémon_logo.svg';
 
 const headingLogo = document.querySelector('.heading__logo');
 const logo = document.createElement('img');
