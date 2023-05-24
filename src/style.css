@@ -23,6 +23,11 @@
   box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
 .heading__logo img:hover {
   transform: scale(1.1);
   cursor: pointer;
@@ -123,10 +128,10 @@
 
 /* pop-up */
 
-.popup-container{
+.popup-container {
   width: 100%;
   height: 100vh;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;
@@ -134,7 +139,7 @@
   overflow-y: scroll;
 }
 
-#close-btn{
+#close-btn {
   position: absolute;
   font-size: xx-large;
   font-weight: 900;
@@ -142,11 +147,10 @@
   right: 5%;
   border: none;
   background-color: transparent;
-  font-size: 1.5rem;
   cursor: pointer;
 }
 
-.popup{
+.popup {
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -159,16 +163,11 @@
   background-color: #fff;
 }
 
-.image-container{
+.image-container {
   width: 70%;
 }
 
-.image-container img{
-  width: 100%;
-  height: auto;
-}
-
-.details{
+.details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -176,8 +175,8 @@
   margin: 1% auto;
 }
 
-.item-detail__list{
-  width : 50%;
+.item-detail__list {
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -185,7 +184,7 @@
   margin: 1% auto;
 }
 
-.comments-container{
+.comments-container {
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -194,25 +193,25 @@
   margin: 1% auto;
 }
 
-form{
+form {
   width: 50%;
   margin: 1% auto;
 }
 
 .input-container,
-.textarea-container{
+.textarea-container {
   width: 100%;
 }
 
 input,
-textarea{
+textarea {
   border: 3px solid #000;
   padding: 10px;
   margin-bottom: 10px;
   width: 94%;
 }
 
-.submit-btn{
+.submit-btn {
   width: 100px;
   height: 30px;
   margin: 1% auto;
