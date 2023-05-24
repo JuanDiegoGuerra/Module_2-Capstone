@@ -34,7 +34,6 @@ const pokemons = async (url) => {
             <p class="like-count" id="like-count${id + 1}">0 Likes</p>
             <div class="buttons">
               <button type="button" id="${id + 1}" class="comment">Comments</button>
-              <button type="button" class="reservations">Reservations</button>
             </div>
           </div>`;
             cards.innerHTML += card;
