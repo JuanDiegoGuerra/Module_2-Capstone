@@ -2,9 +2,9 @@ const commentsCounter = (comments) => {
   let count = 0;
   if (comments && comments.length > 0) {
     count = comments.length;
-    return `Comments (${count})`;
+    return count;
   }
-  return `Comments (${count})`;
+  return count;
 };
 
 export default commentsCounter;

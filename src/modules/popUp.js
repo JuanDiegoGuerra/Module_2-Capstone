@@ -52,7 +52,7 @@ const displayPopup = (url, id) => {
 
       const displayComments = (comments) => {
         const commentsHeader = popupContainer.querySelector('#comments-header');
-        commentsHeader.innerHTML = `${commentsCounter(comments)}`;
+        commentsHeader.innerHTML = `Comments(${commentsCounter(comments)})`;
         commentsContainer.innerHTML = '';
         comments.forEach((comment) => {
           const { username, comment: commentText, creation_date: creationDate } = comment;
