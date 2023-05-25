@@ -1,3 +1,5 @@
+import { commentsPost, commentsGet } from './commentsAPI.js';
+
 const popupContainer = document.createElement('div');
 popupContainer.classList.add('popup-container');
 popupContainer.classList.add('hidden');
@@ -25,14 +27,11 @@ const displayPopup = (url, id) => {
       <div class="item-detail__list">Weight: ${weight}</div>
       <div class="item-detail__list">Height: ${height}</div>
     </div>
-    <h3>Comments(2)</h3>
-    <div class="comments-container">
-      <div class="comments">
-        <span>03/11/2023</span> <span>Alex: I love to fly</span>
-      </div>
+    <h3 id="comments-header"></h3>
+    <div class="comments-container" id="comments-container-${id}">
     </div>
     <h3>Add a comment</h3>
-    <form id="comment-form">
+    <form id="comment-form-${id}">
       <div class="input-container">
         <input type="text" name="name" placeholder="Your name" required>
       </div>
@@ -43,25 +42,55 @@ const displayPopup = (url, id) => {
     </form>
   </div>`;
 
-      const commentForm = popupContainer.querySelector('#comment-form');
+      const commentsContainer = popupContainer.querySelector(`#comments-container-${id}`);
+      const commentForm = popupContainer.querySelector(`#comment-form-${id}`);
+
+      const displayComments = (comments) => {
+        const commentsHeader = popupContainer.querySelector('#comments-header');
+        commentsHeader.innerHTML = `Comments (${comments.length})`;
+        commentsContainer.innerHTML = '';
+        comments.forEach((comment) => {
+          const { username, comment: commentText, creation_date: creationDate } = comment;
+          const commentElement = document.createElement('div');
+          commentElement.classList.add('comment');
+          commentElement.innerHTML = `
+          <span class="comment__date">${creationDate}</span>
+          <span class="comment__username">${username}</span>
+          <span class="comment__text">${commentText}</span>`;
+
+          commentsContainer.appendChild(commentElement);
+        });
+      };
+
+      commentsGet(id).then((comments) => {
+        displayComments(comments);
+      }).catch((err) => {
+        throw ("Couldn't fetch comments", err);
+      });
 
       commentForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const nameInput = commentForm.querySelector('input[name="name"]');
         const commentsInput = commentForm.querySelector('textarea[name="comments"]');
-        // const name = nameInput.value;
-        // const comment = commentsInput.value;
-        // Here, you can make a request to your Involvement API to record the comment
-        nameInput.value = '';
-        commentsInput.value = '';
-      });
+        const name = nameInput.value;
+        const comment = commentsInput.value;
 
+        commentsPost(id, name, comment)
+          .then(() => commentsGet(id)).then((comments) => {
+            displayComments(comments);
+            nameInput.value = '';
+            commentsInput.value = '';
+          }).catch((err) => {
+            throw ("Couldn't fetch comments", err);
+          });
+      });
       document.body.appendChild(popupContainer);
 
       const closeButton = document.getElementById('close-btn');
       closeButton.addEventListener('click', removePopup);
-    }).catch((err) => {
-      throw ("Couldn't fetch pokemon", err)();
+    })
+    .catch((err) => {
+      throw ("Couldn't fetch pokemon", err);
     });
 };
 
