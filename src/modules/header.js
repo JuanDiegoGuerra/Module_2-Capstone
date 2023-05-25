@@ -20,7 +20,7 @@ const createHeader = () => {
     navItems.innerText = `${listItems[i]}`;
 
     if (listItems[i] === 'Pokemon') {
-      pokemons('https://pokeapi.co/api/v2/pokemon?limit=8&offset=12')
+      pokemons('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
         .then((response) => {
           navItems.classList.add('active');
           navItems.innerText = `${listItems[i]}(${response})`;
