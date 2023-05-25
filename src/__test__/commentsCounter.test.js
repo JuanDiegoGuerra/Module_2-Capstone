@@ -16,4 +16,8 @@ describe('commentsCounter', () => {
     ];
     expect(commentsCounter(comments)).toBe(2);
   });
+  it('returns 0 if there are no comments', () => {
+    const comments = [];
+    expect(commentsCounter(comments)).toBe(0);
+  });
 });
