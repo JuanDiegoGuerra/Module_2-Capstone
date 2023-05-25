@@ -12,9 +12,11 @@ const displayPopup = (url, id) => {
   fetch(url).then((response) => response.json())
     .then((data) => {
       const {
-        name, weight, height, sprites,
+        name, weight, height, sprites, abilities, species,
       } = data;
       const { front_default: frontDefault } = sprites.other['official-artwork'];
+      const skills = abilities[0].ability.name;
+      const family = species.name;
       popupContainer.innerHTML = `
   <div class="popup">
     <button id="close-btn" class="close-btn" type="button">X</button>
@@ -26,6 +28,8 @@ const displayPopup = (url, id) => {
     <div class="details">
       <div class="item-detail__list">Weight: ${weight}</div>
       <div class="item-detail__list">Height: ${height}</div>
+      <div class="item-detail__list">Abilities: ${skills}</div>
+      <div class="item-detail__list">Species: ${family}</div>
     </div>
     <h3 id="comments-header"></h3>
     <div class="comments-container" id="comments-container-${id}">
