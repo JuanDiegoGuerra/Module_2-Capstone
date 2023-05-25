@@ -1,4 +1,5 @@
 import { commentsPost, commentsGet } from './commentsAPI.js';
+import commentsCounter from './commentsCount.js';
 
 const popupContainer = document.createElement('div');
 popupContainer.classList.add('popup-container');
@@ -51,7 +52,7 @@ const displayPopup = (url, id) => {
 
       const displayComments = (comments) => {
         const commentsHeader = popupContainer.querySelector('#comments-header');
-        commentsHeader.innerHTML = `Comments (${comments.length})`;
+        commentsHeader.innerHTML = `${commentsCounter(comments)}`;
         commentsContainer.innerHTML = '';
         comments.forEach((comment) => {
           const { username, comment: commentText, creation_date: creationDate } = comment;
