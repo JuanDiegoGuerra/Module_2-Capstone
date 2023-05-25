@@ -36,8 +36,7 @@ body {
 }
 
 .image-container img {
-  width: 100%;
-  height: auto;
+  max-width: 250px;
 }
 
 .heading__logo img:hover {
@@ -165,12 +164,12 @@ body {
 
 .popup-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 100;
   overflow-y: scroll;
 }
 
@@ -187,6 +186,7 @@ body {
 
 .popup {
   width: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -199,7 +199,11 @@ body {
 }
 
 .image-container {
+  height: 270px;
   width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .details {
@@ -208,6 +212,7 @@ body {
   justify-content: space-around;
   align-items: center;
   margin: 1% auto;
+  width: 50%;
 }
 
 .item-detail__list {
@@ -222,15 +227,22 @@ body {
 .comments-container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  justify-content: start;
+  width: 40%;
   max-height: 70px;
   overflow-y: scroll;
-  margin: 1% auto;
+  scrollbar-gutter: auto;
+}
+
+div.comment {
+  display: flex;
+  gap: 10px;
+  justify-content: start;
 }
 
 form {
   width: 50%;
-  margin: 1% auto;
+  margin: 0 auto;
 }
 
 .input-container,
