@@ -144,8 +144,8 @@ GH Pages, publish the branch in git Hub pages
 👤 **Juan Diego Guerra (JD)**
 
 - GitHub: [@Juan Diego](https://github.com/JuanDiegoGuerra)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Twitter: [@twitterhandle](https://twitter.com/jdxelric147)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/juan-guerra-65076b1ba/)
 
 👤 **Lincoln Gibson**
 
