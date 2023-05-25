@@ -55,7 +55,8 @@ This project is a basic website that allows users see a list of pokemons in card
 
 - **Use of APIs**
 - **POST/GET methods with APIs**
-- **Kanvan Board**
+- **Kanban Board**
+- **Jest Testing library**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -75,9 +76,15 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project you need have the following installed:
 
-* Only clone the repo and run in your local
+```sh
+- A web browser
+- A code editor
+- A terminal
+- Git
+- Node.js
+```
 
 ### Setup
 
@@ -87,11 +94,11 @@ https://github.com/JuanDiegoGuerra/Module_2-Capstone.git
 
 ### Install
 
-<!-- Install this project with: -->
+Install this project dependencies with:
 
-Clone this repository to your desired folder:
-
-https://github.com/JuanDiegoGuerra/Module_2-Capstone.git
+```sh
+  cd into the folder and run `npm install`
+```
 
 ### Usage
 
@@ -103,7 +110,23 @@ git clone https://github.com/JuanDiegoGuerra/Module_2-Capstone.git
 
 To run tests, run the following command:
 
-No implemented yet.
+To test JavaScript:
+
+```sh
+    run `npx eslint .`
+```
+
+To test HTML:
+
+```sh
+    run `npx hint .`
+```
+
+To test CSS:
+
+```sh
+    run `npx stylelint "**/*.{css,scss}" `
+```
 
 ### Deployment
 
@@ -126,9 +149,9 @@ GH Pages, publish the branch in git Hub pages
 
 👤 **Lincoln Gibson**
 
-- GitHub: [@Lincoln Gibson](https://github.com/lincoln1883)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Github: [lincoln1883](https://github.com/lincoln1883)
+- Twitter: [lincolngibson7](https://twitter.com/lincolngibson7)
+- LinkedIn: [lincoln-gibson](https://linkedin.com/in/lincoln-gibson)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
