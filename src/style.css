@@ -195,14 +195,40 @@ body {
   padding: 20px 0;
   border: 2px solid #000;
   background-color: #fff;
+  background-image: url(./images/anime_nature_bg_4.jpg);
+  background-repeat: no-repeat;
+  overflow-y: scroll;
 }
 
 .image-container {
   height: 270px;
-  width: 70%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: radial-gradient(#115609 33%, #8d3394 33%);
+  background-size: 10px 10px;
+  border-radius: 50%;
+  border: 5px solid black;
+}
+
+.item-header {
+  background-color: goldenrod;
+  border-radius: 15%;
+  margin-top: 1vh;
+}
+
+.addcomment-title {
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+  background-color: goldenrod;
+  border-radius: 15%;
+}
+
+#comments-header {
+  background-color: goldenrod;
+  border-radius: 15%;
+  margin-bottom: 1vh;
 }
 
 .details {
@@ -212,6 +238,7 @@ body {
   align-items: center;
   margin: 1% auto;
   width: 50%;
+  background-color: azure;
 }
 
 .item-detail__list {
@@ -220,17 +247,18 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  margin: 1% auto;
 }
 
 .comments-container {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 40%;
+  width: 50%;
   max-height: 70px;
   overflow-y: scroll;
   scrollbar-gutter: auto;
+  background-color: azure;
+  padding: 1vh;
 }
 
 div.comment {
@@ -254,7 +282,7 @@ textarea {
   border: 3px solid #000;
   padding: 10px;
   margin-bottom: 10px;
-  width: 94%;
+  width: 100%;
 }
 
 .submit-btn {
@@ -281,4 +309,39 @@ textarea {
 .footer a {
   text-decoration: none;
   color: blueviolet;
+}
+
+@media (max-width: 500px) {
+  .popup {
+    width: 90%;
+  }
+
+  .image-container {
+    width: 80%;
+  }
+
+  .image-container img {
+    max-width: 200px;
+  }
+
+  .details {
+    width: 80%;
+  }
+
+  form {
+    width: 80%;
+  }
+
+  .comments-container {
+    width: 80%;
+  }
+
+  .heading__logo img {
+    width: 100px;
+  }
+
+  .nav__list {
+    gap: 0;
+    font-size: 15px;
+  }
 }
