@@ -41,7 +41,7 @@ const displayPopup = (url, id) => {
         <input type="text" name="name" placeholder="Your name" required>
       </div>
       <div class="textarea-container">
-        <textarea type="text" name="comments" placeholder="Your insights" required rows="5" cols="36" ></textarea>
+        <textarea type="text" name="comments" placeholder="Your insights" required rows="5" cols="36" maxlenght="20"></textarea>
       </div>
       <button id="submit-btn" class="submit-btn" type="submit">Comment</button>
     </form>
