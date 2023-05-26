@@ -35,7 +35,7 @@ const displayPopup = (url, id) => {
     <h3 id="comments-header"></h3>
     <div class="comments-container" id="comments-container-${id}">
     </div>
-    <h3>Add a comment</h3>
+    <h3 class="addcomment-title">Add a comment</h3>
     <form id="comment-form-${id}">
       <div class="input-container">
         <input type="text" name="name" placeholder="Your name" required>
